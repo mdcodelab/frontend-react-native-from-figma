@@ -1,7 +1,9 @@
 import React from 'react';
 import UserAvatar from '../components/UserAvatar';
 import BackButton from '../components/BackButton';
-import { View , StyleSheet} from 'react-native';
+import { View , StyleSheet, Text} from 'react-native';
+import SendButton from '../components/SendButton';
+import SocialSection from '../components/SocialSection';
 
 function ContactUsScreen() {
   return (
@@ -10,6 +12,9 @@ function ContactUsScreen() {
         <BackButton></BackButton>
         <UserAvatar />
         </View>
+        <Text style={styles.title}>Contact Us</Text>
+        <Text style={styles.description}>Social media platforms</Text>
+        <SocialSection />
     </View>
   )
 }
@@ -25,6 +30,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    letterSpacing: 1.5,
+    marginVertical: 50
+  },
+  description: {
+    fontSize: 20,
+    marginBottom: 20,
   }
 
 });
