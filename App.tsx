@@ -2,12 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import InitialScreen from './screens/InitialScreen';
 import ContactUsScreen from './screens/ContactUsScreen';
+import MeditationScreen from './screens/MeditationScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <InitialScreen /> */}
-      <ContactUsScreen />
+      {/* <ContactUsScreen /> */}
+      <MeditationScreen />
       <StatusBar style="auto" />
     </View>
   );
