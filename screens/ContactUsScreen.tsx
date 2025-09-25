@@ -1,11 +1,15 @@
 import React from 'react';
 import UserAvatar from '../components/UserAvatar';
+import BackButton from '../components/BackButton';
 import { View , StyleSheet} from 'react-native';
 
 function ContactUsScreen() {
   return (
     <View style={styles.container}>
-      <UserAvatar />
+        <View style={styles.header}>
+        <BackButton></BackButton>
+        <UserAvatar />
+        </View>
     </View>
   )
 }
@@ -15,9 +19,12 @@ export default ContactUsScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
+    padding: 16,
   },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  }
 
 });
