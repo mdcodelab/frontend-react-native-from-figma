@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import InitialScreen from './screens/InitialScreen';
+import ContactUsScreen from './screens/ContactUsScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <InitialScreen />
+      {/* <InitialScreen /> */}
+      <ContactUsScreen />
       <StatusBar style="auto" />
     </View>
   );
