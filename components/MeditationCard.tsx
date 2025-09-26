@@ -3,14 +3,14 @@ import { View, Text, StyleSheet, Image, ImageBackground, Dimensions } from 'reac
 import { s, vs } from 'react-native-size-matters';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
-function MeditationCard() {
+function MeditationCard({image, title, date, icon}: any) {
     const phoneWidth = Dimensions.get('window').width;
     const cardWidth = phoneWidth - s(16);
 
   return (
     <View style={styles.cardWrapper}>
       <ImageBackground
-        source={require('../assets/1.webp')}
+        source={image}
         style={styles.card} 
         imageStyle={styles.cardImage}
       >
@@ -20,7 +20,7 @@ function MeditationCard() {
         <Text style={styles.title}>Meditation</Text>
         <View style={styles.heartContainer}>
             <AntDesign name="video-camera" size={s(12)} color="#rgba(74, 140, 255, 1)" />
-            <Text style={styles.heartText}>31st Jan 09:00 am</Text>
+            <Text style={styles.heartText}>{date}</Text>
         </View>
       </View>
     </View>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     height: vs(150),
     borderRadius: s(12),
     overflow: 'hidden',
-    backgroundColor: '#EDEFF2', // fallback bg while image loads
+    backgroundColor: '#EDEFF2', 
   },
   card: {
     width: '100%',
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
   },
   heartText: {
     fontSize: s(10),

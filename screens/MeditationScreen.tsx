@@ -50,7 +50,8 @@ function MeditationScreen() {
                 data={dummyData}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
-                    <MeditationCard />
+                    <MeditationCard image={item.image} title={item.title}
+                    date={item.date} icon={item.icon}/>
                 )}
                 showsVerticalScrollIndicator={false}
                 numColumns={2}
