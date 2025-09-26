@@ -1,9 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Image, ImageBackground, Dimensions } from 'react-native';
 import { s, vs } from 'react-native-size-matters';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
 function MeditationCard() {
+    const phoneWidth = Dimensions.get('window').width;
+    const cardWidth = phoneWidth - s(16);
+
   return (
     <View style={styles.cardWrapper}>
       <ImageBackground
@@ -28,8 +31,8 @@ export default MeditationCard;
 
 const styles = StyleSheet.create({
   cardWrapper: {
-    width: s(166),
-    height: vs(161),
+    width: s(155),
+    height: vs(150),
     borderRadius: s(12),
     overflow: 'hidden',
     backgroundColor: '#EDEFF2', // fallback bg while image loads

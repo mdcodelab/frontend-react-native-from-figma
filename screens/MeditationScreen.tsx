@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { s, vs } from 'react-native-size-matters';
 import MeditationCard from '../components/MeditationCard';
+import { dummyData } from '../data';
 
 function MeditationScreen() {
     const tabsArray = ['Live', 'Recorded'];
@@ -14,7 +15,9 @@ function MeditationScreen() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Meditations</Text>
-            <Text style={styles.description}>Lorem ipsum dolor sit amet consectetur adipisicing.</Text>
+            <Text style={styles.description}>
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+            </Text>
 
             <View style={styles.tabs}>
                 {tabsArray.map((tab) => (
@@ -23,7 +26,9 @@ function MeditationScreen() {
                         onPress={() => setSelectedTab(tab)}
                         style={[
                             styles.tab,
-                            selectedTab === tab ? { backgroundColor: ACTIVE_BG, borderColor: ACTIVE_BG } : styles.tabInactive,
+                            selectedTab === tab
+                                ? { backgroundColor: ACTIVE_BG, borderColor: ACTIVE_BG }
+                                : styles.tabInactive,
                         ]}
                         accessibilityRole="button"
                         accessibilityState={{ selected: selectedTab === tab }}
@@ -31,7 +36,7 @@ function MeditationScreen() {
                         <Text
                             style={[
                                 styles.tabText,
-                                { color: selectedTab === tab ? ACTIVE_TEXT : INACTIVE_TEXT }
+                                { color: selectedTab === tab ? ACTIVE_TEXT : INACTIVE_TEXT },
                             ]}
                         >
                             {tab}
@@ -39,7 +44,21 @@ function MeditationScreen() {
                     </TouchableOpacity>
                 ))}
             </View>
-            <MeditationCard />
+
+            {/* Lista cu meditații */}
+            <FlatList
+                data={dummyData}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => (
+                    <MeditationCard />
+                )}
+                showsVerticalScrollIndicator={false}
+                numColumns={2}
+                columnWrapperStyle={{
+                    marginBottom: vs(16),
+                    justifyContent: 'space-between',
+                }}
+            />
         </View>
     );
 }
@@ -66,16 +85,16 @@ const styles = StyleSheet.create({
     },
     tabs: {
         flexDirection: 'row',
-        width: s(343),
+        width: s(320),
         height: vs(42),
-        gap: s(12),
-        marginTop: vs(16),
+        gap: s(10),
+        marginTop: vs(10),
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        marginBottom: vs(10),
     },
     tab: {
-        flex: 1,
-        width: s(162),
+        width: s(155),
         height: vs(32),
         paddingHorizontal: s(12),
         borderRadius: s(8),
