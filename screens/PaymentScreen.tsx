@@ -13,6 +13,7 @@ function PaymentScreen() {
         <Text style={styles.headerText}>Payment</Text>
       </View>
       <PayMethodCard></PayMethodCard>
+      <PayMethodCard selected={true}></PayMethodCard>
     </View>
   )
 }
