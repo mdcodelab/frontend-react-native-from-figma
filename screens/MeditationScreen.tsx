@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { s, vs } from 'react-native-size-matters';
 import MeditationCard from '../components/MeditationCard';
-import { dummyData } from '../data';
+import { dummyData } from '../data/data';
 
 function MeditationScreen() {
     const tabsArray = ['Live', 'Recorded'];
