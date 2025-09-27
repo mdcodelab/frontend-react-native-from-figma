@@ -4,6 +4,7 @@ import BackButton from '../components/BackButton';
 import { s, vs } from 'react-native-size-matters';
 import PaymentsList from '../components/PaymentsList';
 import PaymentBox from '../components/PaymentBox';
+import AddNewButton from '../components/AddNewButtpn';
 
 
 function PaymentScreen() {
@@ -15,6 +16,7 @@ function PaymentScreen() {
       </View>
       <PaymentsList></PaymentsList>
       <PaymentBox></PaymentBox>
+      <AddNewButton></AddNewButton>
     </View>
   )
 }

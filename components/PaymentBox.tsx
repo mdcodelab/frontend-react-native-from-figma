@@ -7,7 +7,7 @@ function PaymentBox() {
     <View style={styles.container}>
       <Text style={styles.centerText}>No master card added!</Text>
       <Text style={styles.subtitle}>You can add a mastercard and</Text>
-      <Text style={styles.subtitle} style={{marginTop: "-20"}}>save it for latter</Text>
+        <Text style={styles.subtitle}>save it for latter</Text>
     </View>
   );
 }
@@ -17,7 +17,7 @@ export default PaymentBox;
 const styles = StyleSheet.create({
   container: {
     width: '100%', // full width
-    height: vs(257),
+    height: vs(157),
     borderRadius: s(10),
     backgroundColor: 'rgba(247, 248, 249, 1)',
     flexDirection: "column",
