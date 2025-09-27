@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import BackButton from '../components/BackButton';
 import { s, vs } from 'react-native-size-matters';
-import PayMethodCard from '../components/PayMethodCard';
+import PaymentsList from '../components/PaymentsList';
 
 
 function PaymentScreen() {
@@ -12,8 +12,7 @@ function PaymentScreen() {
         <BackButton></BackButton>
         <Text style={styles.headerText}>Payment</Text>
       </View>
-      <PayMethodCard></PayMethodCard>
-      <PayMethodCard selected={true}></PayMethodCard>
+      <PaymentsList></PaymentsList>
     </View>
   )
 }

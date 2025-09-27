@@ -3,19 +3,21 @@ import { View, StyleSheet, Image, Text } from 'react-native';
 import { s, vs } from 'react-native-size-matters';
 import { MaterialIcons } from '@expo/vector-icons';
 
-function PayMethodCard({ selected = false }) {
+function PayMethodCard({ image, method, selected}) {
+
+
   return (
     <View style={[styles.container, 
     selected && styles.selectedContainer]}>
         {selected && (
         <MaterialIcons name="check-circle" size={28} color="rgba(225, 118, 34, 1)"
          style={{position: "absolute", top: -1, right: 0}} />
-        )}
+        )} 
       <Image
-        source={require("../assets/payments/cash.svg")}
+        source={image}
         style={styles.imageSvg}
       />
-      <Text style={styles.imageText}>Cash</Text>
+      <Text style={styles.imageText}>{method}</Text>
     </View>
   );
 }
