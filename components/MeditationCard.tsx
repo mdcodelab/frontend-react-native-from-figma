@@ -10,7 +10,7 @@ function MeditationCard({image, title, date, icon}: any) {
   return (
     <View style={styles.cardWrapper}>
       <ImageBackground
-        source={image}
+        source={{uri: image}}
         style={styles.card} 
         imageStyle={styles.cardImage}
       >
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
   heartText: {
     fontSize: s(10),
