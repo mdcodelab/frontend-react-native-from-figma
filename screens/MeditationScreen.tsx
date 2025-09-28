@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native
 import { s, vs } from 'react-native-size-matters';
 import MeditationCard from '../components/MeditationCard';
 import { dummyData } from '../data/data';
+import { useNavigation } from 'expo-router';
 
 function MeditationScreen() {
     const tabsArray = ['Live', 'Recorded'];
@@ -12,8 +13,15 @@ function MeditationScreen() {
 
     const [selectedTab, setSelectedTab] = React.useState(tabsArray[0]);
 
+    const navigation = useNavigation();
+
+
     return (
         <View style={styles.container}>
+            Button
+        title="Go to Contact Us"
+        onPress={() => navigation.navigate("Contact Us")}
+      />
             <Text style={styles.title}>Meditations</Text>
             <Text style={styles.description}>
                 Lorem ipsum dolor sit amet consectetur adipisicing.

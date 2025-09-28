@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, Button } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 function InitialScreen() {
+  const navigation=useNavigation();
   return (
     <View style={styles.container}>
       <Image
@@ -11,6 +13,7 @@ function InitialScreen() {
         accessibilityLabel="Logo"
       />
       <Image source={require("../assets/Ellipse2.png")} style={styles.bottomImage}></Image>
+      <Button title="Get Started" onPress={()=>navigation.navigate("Meditation")}></Button>
     </View>
   )
 }

@@ -5,7 +5,7 @@ import ContactUsScreen from './screens/ContactUsScreen';
 import MeditationScreen from './screens/MeditationScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import MainStackNavigator from './navigation/MainStackNavigator';
-import NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 
 
 export default function App() {
